@@ -1,0 +1,30 @@
+[
+  {
+    "id": "bdeb50d1-a030-42de-a7d5-b3ce461afc71",
+    "username": "test",
+    "email": "test@test.com",
+    "password": "1234",
+    "avatarColor": "#257532"
+  },
+  {
+    "id": "da69605b-da54-4c21-af79-5f91553e4f0f",
+    "username": "Radu",
+    "email": "spectradevice@gmail.com",
+    "password": "asdf1234",
+    "avatarColor": "#a06ff6"
+  },
+  {
+    "id": "f4cbbdde-d8c3-45a4-af1d-74369791cdcf",
+    "username": "test2 - ap13",
+    "email": "test2@test.com",
+    "password": "1234",
+    "avatarColor": "#29a83a"
+  },
+  {
+    "id": "3e30a733-636f-4955-a057-5456e5bb3050",
+    "username": "Vasili Petrov",
+    "email": "sexyvasile@gmail.com",
+    "password": "asdf1234",
+    "avatarColor": "#202d3c"
+  }
+]

@@ -1,0 +1,21 @@
+<div class="centered-layout">
+  <div class="card-clean">
+    <div class="icon-header">
+      <i class="fa-solid fa-shield-halved"></i>
+    </div>
+    <h2>Acces Rezidenți</h2>
+    <p class="subtitle">Introduceți codul de acces al imobilului.</p>
+    <div class="form-group">
+      <label>Cod Acces</label>
+      <input [(ngModel)]="code" type="password" placeholder="••••••••">
+    </div>
+    <button (click)="verify()" class="btn-primary">
+      Verifică
+    </button>
+    @if (error) {
+      <div class="error-msg">
+        <i class="fa-solid fa-circle-exclamation"></i> Cod invalid
+      </div>
+    }
+  </div>
+</div>

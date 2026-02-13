@@ -1,0 +1,51 @@
+<div class="app-layout">
+  <header class="app-header">
+    <div class="brand">
+      <div class="logo-sq">RL</div>
+      <div class="brand-text">
+        <h1>ResidentLive</h1>
+        <span class="status">● Online</span>
+      </div>
+    </div>
+    @if (currentUser) {
+      <div class="user-menu">
+        <span class="username">{{ currentUser.username }}</span>
+        <button (click)="logout()" class="btn-logout" title="Ieșire">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        </button>
+      </div>
+    }
+  </header>
+  <main class="chat-area" #scrollContainer>
+    @for (msg of messages; track $index) {
+      @if (msg.type === 'SYSTEM') {
+        <div class="system-notification">
+          {{ msg.content }}
+        </div>
+      }
+      @else {
+        <div class="message-row" [ngClass]="{'mine': msg.senderId === currentUser?.id}">
+          <div class="bubble">
+            @if (msg.senderId !== currentUser?.id) {
+              <div class="sender-name">{{ msg.senderName }}</div>
+            }
+            <div class="content">{{ msg.content }}</div>
+            <div class="time">{{ msg.timestamp | date:'HH:mm' }}</div>
+          </div>
+        </div>
+      }
+
+    } @empty {
+      <div class="empty-state"><p>Nu există mesaje recente.</p></div>
+    }
+  </main>
+  <footer class="input-area">
+    <div class="input-wrapper">
+      <input [(ngModel)]="txtMessage" (keyup.enter)="send()"
+             type="text" placeholder="Scrie un mesaj..." autofocus>
+      <button (click)="send()" class="btn-send" [disabled]="!txtMessage.trim()">
+        <i class="fa-solid fa-paper-plane"></i>
+      </button>
+    </div>
+  </footer>
+</div>
