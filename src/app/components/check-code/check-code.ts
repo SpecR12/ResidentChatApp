@@ -18,6 +18,7 @@ export class CheckCode {
   error = false;
   constructor(private service: ChatService, private router: Router) {}
 
+  //verifica codul din server.js "test1234", daca e corect redirectioneaza la /auth
   verify(){
     this.service.checkCode(this.code).subscribe({
       next: () => {
