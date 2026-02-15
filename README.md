@@ -21,7 +21,7 @@ The server acts as the application's "brain" with two main responsibilities:
 * **API REST:** Handles standard HTTP requests (e.g., `/api/check-code`, `/api/auth`) for authentication and security checks.
 * **WebSocket Manager:** Utilizes **Socket.io** to maintain open, bi-directional connections with all clients, enabling message broadcasting.
 
-### 2. Frontend (Angular 17+)
+### 2. Frontend (Angular 21+)
 The interface is a **Single Page Application (SPA)**.
 * It connects to the server via WebSockets immediately upon loading.
 * It leverages **Observables** (RxJS) and **NgZone** to detect incoming data streams and update the UI DOM instantly, bypassing standard browser refresh cycles.
